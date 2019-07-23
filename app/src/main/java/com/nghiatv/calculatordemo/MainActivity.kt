@@ -1,7 +1,10 @@
 package com.nghiatv.calculatordemo
 
+import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -9,6 +12,8 @@ import net.objecthunter.exp4j.ExpressionBuilder
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     val TAG = "MainActivity"
+    val BUNDLE_EXPRESSION = "BUNDLE_EXPRESSION"
+    val BUNDLE_RESULT = "BUNDLE_RESULT"
 
     val ZERO = "0"
     val ONE = "1"
@@ -28,11 +33,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     val OPEN = "("
     val CLOSE = ")"
 
+    private var expression: String = ""
+    private var result: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initialize()
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        savedInstanceState?.run {
+            textExpression.text = getString(BUNDLE_EXPRESSION)
+            textResult.text = getString(BUNDLE_RESULT)
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.run {
+            putString(BUNDLE_EXPRESSION, textExpression.text.toString())
+            putString(BUNDLE_RESULT, textResult.text.toString())
+        }
+
+        super.onSaveInstanceState(outState)
     }
 
     override fun onClick(view: View?) {
@@ -67,7 +93,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun initialize() {
+    private fun initialize() {
         // Numbers
         textZero.setOnClickListener { appendOnExpression(ZERO, true) }
         textOne.setOnClickListener { appendOnExpression(ONE, true) }
@@ -95,7 +121,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         textEqual.setOnClickListener(this)
     }
 
-    fun appendOnExpression(string: String, canClear: Boolean) {
+    private fun appendOnExpression(string: String, canClear: Boolean) {
         if (textResult.text.isNotEmpty()) {
             textExpression.text = ""
         }
