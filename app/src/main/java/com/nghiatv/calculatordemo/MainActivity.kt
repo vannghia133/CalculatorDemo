@@ -2,7 +2,6 @@ package com.nghiatv.calculatordemo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -38,31 +37,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            text_clear.id -> {
-                text_expression.text = ""
-                text_result.text = ""
+            textClear.id -> {
+                textExpression.text = ""
+                textResult.text = ""
             }
 
-            text_back.id -> {
-                val string = text_expression.text.toString()
+            textBack.id -> {
+                val string = textExpression.text.toString()
                 if (string.isNotEmpty()) {
-                    text_expression.text = string.substring(0, string.length - 1)
+                    textExpression.text = string.substring(0, string.length - 1)
                 }
-                text_result.text = ""
+                textResult.text = ""
             }
 
-            text_equal.id -> {
+            textEqual.id -> {
                 try {
-                    val expression = ExpressionBuilder(text_expression.text.toString()).build()
+                    val expression = ExpressionBuilder(textExpression.text.toString()).build()
                     val doubleResult = expression.evaluate()
                     val longResult = doubleResult.toLong()
                     if (doubleResult == longResult.toDouble()) {
-                        text_result.text = longResult.toString()
+                        textResult.text = longResult.toString()
                     } else {
-                        text_result.text = doubleResult.toString()
+                        textResult.text = doubleResult.toString()
                     }
                 } catch (e: Exception) {
-                    Log.d(TAG, " message: " + e.message)
+
                 }
             }
         }
@@ -70,44 +69,44 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun initialize() {
         // Numbers
-        text_zero.setOnClickListener { appendOnExpression(ZERO, true) }
-        text_one.setOnClickListener { appendOnExpression(ONE, true) }
-        text_two.setOnClickListener { appendOnExpression(TWO, true) }
-        text_three.setOnClickListener { appendOnExpression(THREE, true) }
-        text_four.setOnClickListener { appendOnExpression(FOUR, true) }
-        text_five.setOnClickListener { appendOnExpression(FIVE, true) }
-        text_six.setOnClickListener { appendOnExpression(SIX, true) }
-        text_seven.setOnClickListener { appendOnExpression(SEVEN, true) }
-        text_eight.setOnClickListener { appendOnExpression(EIGHT, true) }
-        text_nine.setOnClickListener { appendOnExpression(NINE, true) }
-        text_dot.setOnClickListener { appendOnExpression(DOT, true) }
+        textZero.setOnClickListener { appendOnExpression(ZERO, true) }
+        textOne.setOnClickListener { appendOnExpression(ONE, true) }
+        textTwo.setOnClickListener { appendOnExpression(TWO, true) }
+        textThree.setOnClickListener { appendOnExpression(THREE, true) }
+        textFour.setOnClickListener { appendOnExpression(FOUR, true) }
+        textFive.setOnClickListener { appendOnExpression(FIVE, true) }
+        textSix.setOnClickListener { appendOnExpression(SIX, true) }
+        textSeven.setOnClickListener { appendOnExpression(SEVEN, true) }
+        textEight.setOnClickListener { appendOnExpression(EIGHT, true) }
+        textNine.setOnClickListener { appendOnExpression(NINE, true) }
+        textDot.setOnClickListener { appendOnExpression(DOT, true) }
 
         // Operators
-        text_plus.setOnClickListener { appendOnExpression(PLUS, false) }
-        text_minus.setOnClickListener { appendOnExpression(MINUS, false) }
-        text_times.setOnClickListener { appendOnExpression(TIMES, false) }
-        text_div.setOnClickListener { appendOnExpression(DIV, false) }
-        text_open.setOnClickListener { appendOnExpression(OPEN, false) }
-        text_close.setOnClickListener { appendOnExpression(CLOSE, false) }
+        textPlus.setOnClickListener { appendOnExpression(PLUS, false) }
+        textMinus.setOnClickListener { appendOnExpression(MINUS, false) }
+        textTimes.setOnClickListener { appendOnExpression(TIMES, false) }
+        textDiv.setOnClickListener { appendOnExpression(DIV, false) }
+        textOpen.setOnClickListener { appendOnExpression(OPEN, false) }
+        textClose.setOnClickListener { appendOnExpression(CLOSE, false) }
 
         // Set event onclick
-        text_clear.setOnClickListener(this)
-        text_back.setOnClickListener(this)
-        text_equal.setOnClickListener(this)
+        textClear.setOnClickListener(this)
+        textBack.setOnClickListener(this)
+        textEqual.setOnClickListener(this)
     }
 
     fun appendOnExpression(string: String, canClear: Boolean) {
-        if (text_result.text.isNotEmpty()) {
-            text_expression.text = ""
+        if (textResult.text.isNotEmpty()) {
+            textExpression.text = ""
         }
 
         if (canClear) {
-            text_result.text = ""
-            text_expression.append(string)
+            textResult.text = ""
+            textExpression.append(string)
         } else {
-            text_expression.append(text_result.text)
-            text_expression.append(string)
-            text_result.text = ""
+            textExpression.append(textResult.text)
+            textExpression.append(string)
+            textResult.text = ""
         }
     }
 }

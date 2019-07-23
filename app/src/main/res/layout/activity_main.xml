@@ -9,9 +9,9 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/text_expression"
+        android:id="@+id/textExpression"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/expression_height"
         android:ellipsize="start"
         android:gravity="end"
         android:singleLine="true"
@@ -22,9 +22,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_result"
+        android:id="@+id/textResult"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/result_height"
         android:ellipsize="end"
         android:gravity="end"
         android:maxLines="1"
@@ -33,188 +33,188 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_expression" />
+        app:layout_constraintTop_toBottomOf="@id/textExpression" />
 
     <TextView
-        android:id="@+id/text_clear"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textClear"
+        style="@style/ActionButton"
         android:text="@string/clear"
-        app:layout_constraintBottom_toTopOf="@id/text_seven"
-        app:layout_constraintEnd_toStartOf="@id/text_open"
+        app:layout_constraintBottom_toTopOf="@id/textSeven"
+        app:layout_constraintEnd_toStartOf="@id/textOpen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_result"
+        app:layout_constraintTop_toBottomOf="@id/textResult"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/text_open"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textOpen"
+        style="@style/ActionButton"
         android:text="@string/open"
-        app:layout_constraintBottom_toTopOf="@id/text_eight"
-        app:layout_constraintEnd_toStartOf="@id/text_close"
-        app:layout_constraintStart_toEndOf="@id/text_clear"
-        app:layout_constraintTop_toBottomOf="@id/text_result" />
+        app:layout_constraintBottom_toTopOf="@id/textEight"
+        app:layout_constraintEnd_toStartOf="@id/textClose"
+        app:layout_constraintStart_toEndOf="@id/textClear"
+        app:layout_constraintTop_toBottomOf="@id/textResult" />
 
     <TextView
-        android:id="@+id/text_close"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textClose"
+        style="@style/ActionButton"
         android:text="@string/close"
-        app:layout_constraintBottom_toTopOf="@id/text_nine"
-        app:layout_constraintEnd_toStartOf="@id/text_div"
-        app:layout_constraintStart_toEndOf="@id/text_open"
-        app:layout_constraintTop_toBottomOf="@id/text_result" />
+        app:layout_constraintBottom_toTopOf="@id/textNine"
+        app:layout_constraintEnd_toStartOf="@id/textDiv"
+        app:layout_constraintStart_toEndOf="@id/textOpen"
+        app:layout_constraintTop_toBottomOf="@id/textResult" />
 
     <TextView
-        android:id="@+id/text_div"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textDiv"
+        style="@style/ActionButton"
         android:text="@string/div"
-        app:layout_constraintBottom_toTopOf="@id/text_times"
+        app:layout_constraintBottom_toTopOf="@id/textTimes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_close"
-        app:layout_constraintTop_toBottomOf="@id/text_result" />
+        app:layout_constraintStart_toEndOf="@id/textClose"
+        app:layout_constraintTop_toBottomOf="@id/textResult" />
 
     <TextView
-        android:id="@+id/text_seven"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textSeven"
+        style="@style/NumberButton"
         android:text="@string/seven"
-        app:layout_constraintBottom_toTopOf="@id/text_four"
-        app:layout_constraintEnd_toStartOf="@id/text_eight"
+        app:layout_constraintBottom_toTopOf="@id/textFour"
+        app:layout_constraintEnd_toStartOf="@id/textEight"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_clear" />
+        app:layout_constraintTop_toBottomOf="@id/textClear" />
 
     <TextView
-        android:id="@+id/text_eight"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textEight"
+        style="@style/NumberButton"
         android:text="@string/eight"
-        app:layout_constraintBottom_toTopOf="@id/text_five"
-        app:layout_constraintEnd_toStartOf="@id/text_nine"
-        app:layout_constraintStart_toEndOf="@id/text_seven"
-        app:layout_constraintTop_toBottomOf="@id/text_open" />
+        app:layout_constraintBottom_toTopOf="@id/textFive"
+        app:layout_constraintEnd_toStartOf="@id/textNine"
+        app:layout_constraintStart_toEndOf="@id/textSeven"
+        app:layout_constraintTop_toBottomOf="@id/textOpen" />
 
     <TextView
-        android:id="@+id/text_nine"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textNine"
+        style="@style/NumberButton"
         android:text="@string/nine"
-        app:layout_constraintBottom_toTopOf="@id/text_six"
-        app:layout_constraintEnd_toStartOf="@id/text_times"
-        app:layout_constraintStart_toEndOf="@id/text_eight"
-        app:layout_constraintTop_toBottomOf="@id/text_close" />
+        app:layout_constraintBottom_toTopOf="@id/textSix"
+        app:layout_constraintEnd_toStartOf="@id/textTimes"
+        app:layout_constraintStart_toEndOf="@id/textEight"
+        app:layout_constraintTop_toBottomOf="@id/textClose" />
 
     <TextView
-        android:id="@+id/text_times"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textTimes"
+        style="@style/ActionButton"
         android:text="@string/times"
-        app:layout_constraintBottom_toTopOf="@id/text_minus"
+        app:layout_constraintBottom_toTopOf="@id/textMinus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_nine"
-        app:layout_constraintTop_toBottomOf="@id/text_div" />
+        app:layout_constraintStart_toEndOf="@id/textNine"
+        app:layout_constraintTop_toBottomOf="@id/textDiv" />
 
     <TextView
-        android:id="@+id/text_four"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textFour"
+        style="@style/NumberButton"
         android:text="@string/four"
-        app:layout_constraintBottom_toTopOf="@id/text_one"
-        app:layout_constraintEnd_toStartOf="@id/text_five"
+        app:layout_constraintBottom_toTopOf="@id/textOne"
+        app:layout_constraintEnd_toStartOf="@id/textFive"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_seven" />
+        app:layout_constraintTop_toBottomOf="@id/textSeven" />
 
     <TextView
-        android:id="@+id/text_five"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textFive"
+        style="@style/NumberButton"
         android:text="@string/five"
-        app:layout_constraintBottom_toTopOf="@id/text_two"
-        app:layout_constraintEnd_toStartOf="@id/text_six"
-        app:layout_constraintStart_toEndOf="@id/text_four"
-        app:layout_constraintTop_toBottomOf="@id/text_eight" />
+        app:layout_constraintBottom_toTopOf="@id/textTwo"
+        app:layout_constraintEnd_toStartOf="@id/textSix"
+        app:layout_constraintStart_toEndOf="@id/textFour"
+        app:layout_constraintTop_toBottomOf="@id/textEight" />
 
     <TextView
-        android:id="@+id/text_six"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textSix"
+        style="@style/NumberButton"
         android:text="@string/six"
-        app:layout_constraintBottom_toTopOf="@id/text_three"
-        app:layout_constraintEnd_toStartOf="@id/text_minus"
-        app:layout_constraintStart_toEndOf="@id/text_five"
-        app:layout_constraintTop_toBottomOf="@id/text_nine" />
+        app:layout_constraintBottom_toTopOf="@id/textThree"
+        app:layout_constraintEnd_toStartOf="@id/textMinus"
+        app:layout_constraintStart_toEndOf="@id/textFive"
+        app:layout_constraintTop_toBottomOf="@id/textNine" />
 
     <TextView
-        android:id="@+id/text_minus"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textMinus"
+        style="@style/ActionButton"
         android:text="@string/minus"
-        app:layout_constraintBottom_toTopOf="@id/text_plus"
+        app:layout_constraintBottom_toTopOf="@id/textPlus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_six"
-        app:layout_constraintTop_toBottomOf="@id/text_times" />
+        app:layout_constraintStart_toEndOf="@id/textSix"
+        app:layout_constraintTop_toBottomOf="@id/textTimes" />
 
     <TextView
-        android:id="@+id/text_one"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textOne"
+        style="@style/NumberButton"
         android:text="@string/one"
-        app:layout_constraintBottom_toTopOf="@id/text_dot"
-        app:layout_constraintEnd_toStartOf="@id/text_two"
+        app:layout_constraintBottom_toTopOf="@id/textDot"
+        app:layout_constraintEnd_toStartOf="@id/textTwo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_four" />
+        app:layout_constraintTop_toBottomOf="@id/textFour" />
 
     <TextView
-        android:id="@+id/text_two"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textTwo"
+        style="@style/NumberButton"
         android:text="@string/two"
-        app:layout_constraintBottom_toTopOf="@id/text_zero"
-        app:layout_constraintEnd_toStartOf="@id/text_three"
-        app:layout_constraintStart_toEndOf="@id/text_one"
-        app:layout_constraintTop_toBottomOf="@id/text_five" />
+        app:layout_constraintBottom_toTopOf="@id/textZero"
+        app:layout_constraintEnd_toStartOf="@id/textThree"
+        app:layout_constraintStart_toEndOf="@id/textOne"
+        app:layout_constraintTop_toBottomOf="@id/textFive" />
 
     <TextView
-        android:id="@+id/text_three"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textThree"
+        style="@style/NumberButton"
         android:text="@string/three"
-        app:layout_constraintBottom_toTopOf="@id/text_back"
-        app:layout_constraintEnd_toStartOf="@id/text_plus"
-        app:layout_constraintStart_toEndOf="@id/text_two"
-        app:layout_constraintTop_toBottomOf="@id/text_six" />
+        app:layout_constraintBottom_toTopOf="@id/textBack"
+        app:layout_constraintEnd_toStartOf="@id/textPlus"
+        app:layout_constraintStart_toEndOf="@id/textTwo"
+        app:layout_constraintTop_toBottomOf="@id/textSix" />
 
     <TextView
-        android:id="@+id/text_plus"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textPlus"
+        style="@style/ActionButton"
         android:text="@string/plus"
-        app:layout_constraintBottom_toTopOf="@id/text_equal"
+        app:layout_constraintBottom_toTopOf="@id/textEqual"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_three"
-        app:layout_constraintTop_toBottomOf="@id/text_minus" />
+        app:layout_constraintStart_toEndOf="@id/textThree"
+        app:layout_constraintTop_toBottomOf="@id/textMinus" />
 
     <TextView
-        android:id="@+id/text_dot"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textDot"
+        style="@style/NumberButton"
         android:text="@string/dot"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/text_zero"
+        app:layout_constraintEnd_toStartOf="@id/textZero"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_one" />
+        app:layout_constraintTop_toBottomOf="@id/textOne" />
 
     <TextView
-        android:id="@+id/text_zero"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textZero"
+        style="@style/NumberButton"
         android:text="@string/zero"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/text_back"
-        app:layout_constraintStart_toEndOf="@id/text_dot"
-        app:layout_constraintTop_toBottomOf="@id/text_two" />
+        app:layout_constraintEnd_toStartOf="@id/textBack"
+        app:layout_constraintStart_toEndOf="@id/textDot"
+        app:layout_constraintTop_toBottomOf="@id/textTwo" />
 
     <ImageView
-        android:id="@+id/text_back"
-        style="@style/NumberButtonStyle"
+        android:id="@+id/textBack"
+        style="@style/NumberButton"
         android:scaleType="center"
         android:src="@drawable/ic_backspace_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/text_equal"
-        app:layout_constraintStart_toEndOf="@id/text_zero"
-        app:layout_constraintTop_toBottomOf="@id/text_three" />
+        app:layout_constraintEnd_toStartOf="@id/textEqual"
+        app:layout_constraintStart_toEndOf="@id/textZero"
+        app:layout_constraintTop_toBottomOf="@id/textThree" />
 
     <TextView
-        android:id="@+id/text_equal"
-        style="@style/ActionButtonStyle"
+        android:id="@+id/textEqual"
+        style="@style/ActionButton"
         android:text="@string/equal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_back"
-        app:layout_constraintTop_toBottomOf="@id/text_plus" />
+        app:layout_constraintStart_toEndOf="@id/textBack"
+        app:layout_constraintTop_toBottomOf="@id/textPlus" />
 
 </android.support.constraint.ConstraintLayout>
