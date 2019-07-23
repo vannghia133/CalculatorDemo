@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     val OPEN = "("
     val CLOSE = ")"
 
-    private var expression: String = ""
-    private var result: String = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
